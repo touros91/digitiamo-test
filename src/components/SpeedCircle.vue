@@ -24,7 +24,7 @@
         <h4 class="text-center">720</h4>
         <h5 class="text-center">Great!</h5>
         <h2 class="text-center">Page Load</h2>
-        <h3 class="text-center">{{ time }} ms</h3>
+        <h3 class="text-center">{{ time }}s</h3>
       </div>
       <div class="circle2" v-if="isSwiped">
         <div class="dot"></div>
@@ -34,7 +34,7 @@
         <h4 class="text-center">720</h4>
         <h5 class="text-center">Great!</h5>
         <h2 class="first-interaction">First Interaction</h2>
-        <h3 class="text-center">{{ time }} ms</h3>
+        <h3 class="text-center">{{ time }}s</h3>
       </div>
     </div>
   </div>

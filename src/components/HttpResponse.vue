@@ -29,7 +29,7 @@
           <h6>HTTP {{ response.status }} OK</h6>
         </div>
         <div class="border-b">
-          <h6>Response Time: {{ time }}ms</h6>
+          <h6>Response Time: {{ time }}s</h6>
         </div>
         <div>
           <h6>Server: Apache/2.2.14 (Win 32)</h6>
