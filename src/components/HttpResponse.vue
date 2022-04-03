@@ -2,6 +2,7 @@
   <!-- info about HTTP Request -->
   <div class="info-container" v-if="response">
     <div class="d-flex sliding-info">
+      <!-- URL info  -->
       <div class="card-info mt-4">
         <div class="title">
           <h6>URL INFO</h6>
@@ -19,6 +20,7 @@
           <p>{{ response.config.url }}</p>
         </div>
       </div>
+      <!-- Response info  -->
       <div class="card-info bg-white mt-4">
         <div class="title response">
           <h6>RESPONSE</h6>

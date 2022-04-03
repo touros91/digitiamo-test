@@ -20,7 +20,7 @@ export default {
 @import "../assets/style/common.scss";
 
 .share {
-  margin-top: 20px;
+  margin: 20px 0;
   a {
     background-color: #ececec;
     padding: 10px 15px;

@@ -172,7 +172,7 @@ export default {
 
   .first-interaction {
     width: 300px;
-    padding-left: 8px;
+    padding-left: 12px;
   }
 }
 

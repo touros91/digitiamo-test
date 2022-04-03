@@ -78,7 +78,7 @@ export default {
 
         this.response = res;
 
-        // taking ending request time and make calculation of final time
+        // taking ending request time and making calculation of final time
         const endTime = new Date().getTime();
         this.time = Math.round((endTime - startTime) / 2);
       } catch (error) {
