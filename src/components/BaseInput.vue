@@ -4,10 +4,7 @@
       <div class="col-12">
         <Status :response="response" :error="error" />
         <div class="input-container">
-          <select
-            class="form-select width-select"
-            aria-label="Default select example"
-          >
+          <select class="width-select">
             <option v-for="(request, index) in apiRequests" :key="index">
               {{ request }}
             </option>
@@ -35,18 +32,21 @@
         <HttpResponse :response="response" :time="time" />
       </div>
     </div>
+    <Share :response="response" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import HttpResponse from "./HttpResponse.vue";
 import Status from "./Status.vue";
+import HttpResponse from "./HttpResponse.vue";
+import Share from "./Share.vue";
 
 export default {
   components: {
-    HttpResponse,
     Status,
+    HttpResponse,
+    Share,
   },
   data() {
     return {
@@ -84,21 +84,23 @@ export default {
 <style lang="scss" scoped>
 .input-container {
   max-width: 600px;
-  background-color: #ececec;
-  border-radius: 5px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
   padding: 8px;
-  margin: 15px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: #ececec;
+  background-color: #f0f0f0;
 
   .width-select {
-    max-width: fit-content;
     appearance: none;
+    padding: 0 5px;
+    text-align: center;
+    border: none;
   }
 
   input {
-    background-color: #ececec;
+    background-color: #f0f0f0;
     border: none;
   }
 
