@@ -1,4 +1,5 @@
 <template>
+  <!-- select, input and button where to make an HTTP request  -->
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -28,11 +29,14 @@
             <span class="d-none d-md-block">SEND</span>
           </button>
         </div>
-
+        <!-- component which shows HTTP response info  -->
         <HttpResponse :response="response" :time="time" />
       </div>
     </div>
+    <!-- component which shows URL link  -->
     <Share :response="response" />
+    <!-- component which shows timing stats about the response on mobile -->
+    <SpeedCircle v-if="response" :time="time" />
   </div>
 </template>
 
@@ -41,12 +45,14 @@ import axios from "axios";
 import Status from "./Status.vue";
 import HttpResponse from "./HttpResponse.vue";
 import Share from "./Share.vue";
+import SpeedCircle from "./SpeedCircle.vue";
 
 export default {
   components: {
     Status,
     HttpResponse,
     Share,
+    SpeedCircle,
   },
   data() {
     return {
@@ -55,10 +61,13 @@ export default {
       response: null,
       time: null,
       error: null,
+      swipe: true,
     };
   },
   methods: {
+    // method which makes an Axios call
     async httpRequest() {
+      // taking initial request starting time
       const startTime = new Date().getTime();
       try {
         const res = await axios.get(`${this.url}`);
@@ -68,10 +77,10 @@ export default {
         }
 
         this.response = res;
+
+        // taking ending request time and make calculation of final time
         const endTime = new Date().getTime();
         this.time = Math.round((endTime - startTime) / 2);
-        console.log(this.response);
-        console.log(this.time);
       } catch (error) {
         this.error = error.response.status;
         console.log(`Error: ${error.message}`);
@@ -82,15 +91,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/style/common.scss";
+
 .input-container {
   max-width: 600px;
-  background-color: #f0f0f0;
+  background-color: $bg-color-light;
   border-radius: 10px;
   padding: 8px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: #f0f0f0;
+  background-color: $bg-color-light;
 
   .width-select {
     appearance: none;
@@ -100,7 +111,7 @@ export default {
   }
 
   input {
-    background-color: #f0f0f0;
+    background-color: $bg-color-light;
     border: none;
   }
 

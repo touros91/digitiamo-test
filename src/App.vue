@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <BaseInput />
-    <SpeedCircle />
+    <MainComponent />
   </div>
 </template>
 
 <script>
-import BaseInput from "./components/BaseInput.vue";
-import SpeedCircle from "./components/SpeedCircle.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 export default {
   name: "App",
   components: {
-    BaseInput,
-    SpeedCircle,
+    MainComponent,
   },
 };
 </script>
 <style lang="scss">
 @import "./assets/style/common.scss";
+
+#app {
+  padding: 10px 0 40px 0;
+}
 </style>
