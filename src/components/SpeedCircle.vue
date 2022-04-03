@@ -72,14 +72,14 @@ export default {
 @import "../assets/style/common.scss";
 
 .mobile-container {
-  overscroll-behavior: contain;
   position: fixed;
   background: $white;
-  top: calc(100% - 43px);
-  left: 0;
   width: 100%;
   height: 100vh;
   transition: all 0.5s;
+  top: calc(100% - 40px);
+  left: 0;
+  overscroll-behavior: contain;
   &.swipedUp {
     top: 0px;
   }
@@ -177,7 +177,7 @@ export default {
 }
 
 .circle2 {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .speed-size {
