@@ -1,7 +1,7 @@
 <template>
   <!-- component which shows timing stats about the response on mobile -->
 
-  <!-- swipe up and bottom functionality -->
+  <!-- mobile swipe top and bottom functionality -->
   <div
     class="mobile-container d-sm-block d-md-none"
     :class="this.isSwiped ? 'swipedUp' : ''"
@@ -15,31 +15,33 @@
     <!-- speed animation stats  -->
     <div class="time-container" v-if="isSwiped">
       <h2 class="px-4 mt-4">Timing Analysis</h2>
-      <div class="circle" v-if="isSwiped">
+      <div class="circle text-center" v-if="isSwiped">
         <div class="dot"></div>
-        <div class="speed-600 speed-size text-center">600</div>
-        <div class="speed-700 speed-size text-center">700</div>
-        <div class="speed-800 speed-size text-center">800</div>
-
-        <h4 class="text-center">720</h4>
-        <h5 class="text-center">Great!</h5>
-        <h2 class="text-center">Page Load</h2>
-        <h3 class="text-center">{{ time }}s</h3>
+        <div class="speed-size">
+          <div class="speed-600">600</div>
+          <div class="speed-700">700</div>
+          <div class="speed-800">800</div>
+        </div>
+        <h4>720</h4>
+        <h5>Great!</h5>
+        <h2>Page Load</h2>
+        <h3>{{ time }}s</h3>
       </div>
-      <div class="circle2" v-if="isSwiped">
+      <div class="circle2 text-center" v-if="isSwiped">
         <div class="dot"></div>
-        <div class="speed-600 speed-size text-center">600</div>
-        <div class="speed-700 speed-size text-center">700</div>
-        <div class="speed-800 speed-size text-center">800</div>
-        <h4 class="text-center">720</h4>
-        <h5 class="text-center">Great!</h5>
-        <h2 class="first-interaction">First Interaction</h2>
-        <h3 class="text-center">{{ time }}s</h3>
+        <div class="speed-size">
+          <div class="speed-600">600</div>
+          <div class="speed-700">700</div>
+          <div class="speed-800">800</div>
+        </div>
+        <h4>720</h4>
+        <h5>Great!</h5>
+        <h2>First Interaction</h2>
+        <h3>{{ time }}s</h3>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -71,6 +73,7 @@ export default {
 <style lang="scss">
 @import "../assets/style/common.scss";
 
+// swipe top and bottom
 .mobile-container {
   position: fixed;
   background: $white;
@@ -111,8 +114,8 @@ export default {
   position: absolute;
   top: 94px;
   left: 83px;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   background: $white;
   border: 4px solid;
   border-radius: 50%;
@@ -169,33 +172,28 @@ export default {
     padding-top: 50px;
   }
 
-  .first-interaction {
-    width: 300px;
-    padding-left: 12px;
+  .speed-size {
+    font-size: 13px;
+  }
+
+  .speed-600 {
+    position: absolute;
+    top: -25px;
+    left: 90px;
+  }
+  .speed-700 {
+    position: absolute;
+    top: 30px;
+    right: -22px;
+  }
+  .speed-800 {
+    position: absolute;
+    top: 130px;
+    right: -26px;
   }
 }
 
 .circle2 {
   margin-top: 100px;
-}
-
-.speed-size {
-  font-size: 12px;
-}
-
-.speed-600 {
-  position: absolute;
-  top: -25px;
-  left: 92px;
-}
-.speed-700 {
-  position: absolute;
-  top: 30px;
-  right: -25px;
-}
-.speed-800 {
-  position: absolute;
-  top: 130px;
-  right: -29px;
 }
 </style>
