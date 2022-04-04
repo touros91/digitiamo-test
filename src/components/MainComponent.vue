@@ -57,7 +57,7 @@ export default {
   data() {
     return {
       apiRequests: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-      url: "https://jsonplaceholder.typicode.com/posts",
+      url: "http://localhost:3000/posts",
       response: null,
       time: null,
       error: null,
