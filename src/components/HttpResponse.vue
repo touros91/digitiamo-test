@@ -97,7 +97,7 @@ export default {
   border-radius: 10px;
   border: 1px solid $bg-color-light;
   width: auto;
-  min-width: 400px;
+  min-width: 350px;
 
   div {
     width: 100%;
