@@ -22,7 +22,7 @@ export default {
 .share {
   margin-bottom: 20px;
   a {
-    background-color: #ececec;
+    background-color: $bg-color-light;
     padding: 10px 15px;
     border-radius: 25px;
     color: $black;

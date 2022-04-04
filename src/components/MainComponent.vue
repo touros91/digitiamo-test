@@ -65,7 +65,7 @@ export default {
     };
   },
   methods: {
-    // method which makes an Axios call
+    // API call using Axios
     async httpRequest() {
       // taking initial request starting time
       const startTime = new Date().getTime();
@@ -81,6 +81,7 @@ export default {
         // taking ending request time and making calculation of final time
         const endTime = new Date().getTime();
         this.time = ((endTime - startTime) / 100).toFixed(1);
+        console.log(typeof this.time, this.time, endTime, startTime);
       } catch (error) {
         this.error = error.response.status;
         console.log(`Error: ${error.message}`);
@@ -99,8 +100,7 @@ export default {
   border-radius: 10px;
   padding: 8px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between);
   background-color: $bg-color-light;
 
   .width-select {

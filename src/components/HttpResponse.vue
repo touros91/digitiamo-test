@@ -69,7 +69,7 @@ export default {
       type: Object,
     },
     time: {
-      type: Number,
+      type: [Number, String],
     },
   },
 };
@@ -85,8 +85,7 @@ export default {
 .sliding-info {
   overflow: hidden;
   overflow-x: auto;
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between);
   gap: 10px;
 }
 .card-info {
@@ -96,7 +95,7 @@ export default {
   padding-right: 0;
   padding-left: 0;
   border-radius: 10px;
-  border: 1px solid #ececec;
+  border: 1px solid $bg-color-light;
   width: auto;
   min-width: 400px;
 

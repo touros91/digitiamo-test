@@ -48,7 +48,7 @@ export default {
       type: Boolean,
     },
     time: {
-      type: Number,
+      type: [Number, String],
     },
   },
   data() {
@@ -87,8 +87,7 @@ export default {
   .swipe {
     position: absolute;
     bottom: 0;
-    display: flex;
-    justify-content: center;
+    @include flex(center);
     position: relative;
     width: 100%;
     border-top: 1px solid $bg-color-dark-grey;
