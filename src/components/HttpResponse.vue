@@ -96,7 +96,6 @@ export default {
   padding-left: 0;
   border-radius: 10px;
   border: 1px solid $bg-color-light;
-  width: auto;
   min-width: 350px;
 
   div {
