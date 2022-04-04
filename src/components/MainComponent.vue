@@ -77,11 +77,9 @@ export default {
         }
 
         this.response = res;
-
         // taking ending request time and making calculation of final time
         const endTime = new Date().getTime();
         this.time = ((endTime - startTime) / 100).toFixed(1);
-        console.log(typeof this.time, this.time, endTime, startTime);
       } catch (error) {
         this.error = error.response.status;
         console.log(`Error: ${error.message}`);
